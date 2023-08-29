@@ -1,38 +1,37 @@
 const myLibrary = [];
 let id_counter = 0;
 
-function Book(title, author, pages, id) {
-    // the constructor...
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
+function Book(song, album, track, id) {
+    this.song = song;
+    this.album = album;
+    this.track = track;
     this.id = id;
 }
 
-function addBookToLibrary(title, author, pages) {
-    // do stuff here
+function addBookToLibrary(song, album, track) {
     const library = document.querySelector("#content");
     const div = document.createElement("div");
 
-    let book = new Book(title, author, pages, id_counter);
+    let book = new Book(song, album, track, id_counter);
     myLibrary.push(book);
 
-    div.classList.add(id_counter);
-    div.append(`${title}, ${author}, ${pages}`);
+    div.setAttribute("id", `${id_counter}`);
+    div.append(`${song}, ${album}, ${track}`);
     library.append(div);
 
     id_counter += 1;
 }
 
 function remove_book(id) {
- 
+    const book = document.getElementById(`${id}`);
+    
+    book.remove();
+    myLibrary.splice(id, 1);
 }
 
 addBookToLibrary("Test", "Ting", "123");
 addBookToLibrary("Aegis", "Noctourniquet", "Track 2");
+addBookToLibrary("Eunuch Provocateur", "Tremulant", "Track 3");
 remove_book(0);
 
-let tmv = myLibrary[1].id;
-myLibrary.splice(tmv, 1);
-
-console.log(myLibrary, tmv)
+console.log(myLibrary);
