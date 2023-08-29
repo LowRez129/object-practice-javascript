@@ -24,14 +24,16 @@ function addBookToLibrary(song, album, track) {
 
 function remove_book(id) {
     const book = document.getElementById(`${id}`);
-    
     book.remove();
-    myLibrary.splice(id, 1);
+    myLibrary[id] = Book.prototype;
 }
 
 addBookToLibrary("Test", "Ting", "123");
 addBookToLibrary("Aegis", "Noctourniquet", "Track 2");
 addBookToLibrary("Eunuch Provocateur", "Tremulant", "Track 3");
-remove_book(0);
+remove_book(0)
+addBookToLibrary("Test", "Ting", "123");
+addBookToLibrary("Roullete Dares", "De-loused in the Comatorium", "Track 2");
+addBookToLibrary("Tourmaline", "Que Dios Te Maldiga Mi Corazon", "Track 11");
 
 console.log(myLibrary);
