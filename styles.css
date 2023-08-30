@@ -6,11 +6,31 @@
 body {
     background-color: green;
     display: grid;
-    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 10fr 1fr;
     height: 100vh;
 }
 
 #content {
+    display: grid;
+    grid-template-rows: 80% 20%;
+    background-color: aqua;
+}
+
+.input-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 8px;
+    align-items: center;
+}
+
+.input-container > * {
+    height: 50%;
+    border-radius: 16px;
+    padding: 8px;
+}
+
+.library {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -19,7 +39,7 @@ body {
     background-color: lightblue;
 }
 
-#content > div {
+.library > div {
     background-color: white;
     padding: 8px;
     border-radius: 16px;
