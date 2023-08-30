@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 let id_counter = 0;
 
 function Music(song, album, track, id) {
@@ -28,6 +28,13 @@ function remove_Music(id) {
     myLibrary[id] = Music.prototype;
 }
 
+function receiveInput() {
+    const enter = document.querySelector(".enter");
+
+    enter.addEventListener("click", () => addMusicToLibrary("Test", "Ting", "123"));
+}
+
+receiveInput();
 addMusicToLibrary("Test", "Ting", "123");
 addMusicToLibrary("Aegis", "Noctourniquet", "Track 2");
 addMusicToLibrary("Eunuch Provocateur", "Tremulant", "Track 3");

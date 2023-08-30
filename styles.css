@@ -3,10 +3,14 @@
     padding: 0;
 }
 
+html {
+    height: 100vh;
+}
+
 body {
     background-color: green;
     display: grid;
-    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-rows: 10% 80% 10%;
     height: 100vh;
 }
 
