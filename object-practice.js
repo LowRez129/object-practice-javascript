@@ -1,22 +1,22 @@
 let myLibrary = [];
 let id_counter = 0;
 
-function Music(song, album, track, id) {
+function Music(song, album = "unknown", band, id) {
     this.song = song;
     this.album = album;
-    this.track = track;
+    this.band = band;
     this.id = id;
 }
 
-function addMusicToLibrary(song, album, track) {
+function addMusicToLibrary(song, album, band) {
     const library = document.querySelector(".library");
     const div = document.createElement("div");
 
-    let music = new Music(song, album, track, id_counter);
+    let music = new Music(song, album, band, id_counter);
     myLibrary.push(music);
 
     div.setAttribute("id", `${id_counter}`);
-    div.append(`${song}, ${album}, ${track}`);
+    div.append(`${song}, ${album}, ${band}`);
     library.append(div);
 
     id_counter += 1;
@@ -32,7 +32,13 @@ function receiveInput() {
     const enter = document.querySelector(".enter");
     const remove = document.querySelector(".remove");
 
-    enter.addEventListener("click", () => addMusicToLibrary("Test", "Ting", "123"));
+    const song = document.querySelector(".song");
+    const album = document.querySelector(".album");
+    const band = document.querySelector(".band");
+
+    enter.addEventListener("click", () => {
+        addMusicToLibrary(song.value, album.value, band.value);
+    });
     remove.addEventListener("click", () => remove_Music(0));
 }
 

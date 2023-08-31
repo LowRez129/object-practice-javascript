@@ -28,9 +28,15 @@ body {
     align-items: center;
 }
 
-.input-container > * {
+.input-container > button {
     height: 50%;
     border-radius: 16px;
+    padding: 8px;
+}
+
+.input-container > .inputs {
+    display: grid;
+    background-color: burlywood;
     padding: 8px;
 }
 
