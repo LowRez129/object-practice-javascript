@@ -1,43 +1,39 @@
 let myLibrary = [];
-let id_counter = 0;
 
-function Music(song, album = "unknown", band, id) {
+function Music(song, album, band) {
     this.song = song;
     this.album = album;
     this.band = band;
-    this.id = id;
 }
 
 function addMusicToLibrary(song, album, band) {
     const library = document.querySelector(".library");
     const div = document.createElement("div");
-    id_counter += 1;
+    const remove = document.createElement("button");
 
-    let music = new Music(song, album, band, id_counter);
+    let music = new Music(song, album, band);
     myLibrary.push(music);
 
-    div.setAttribute("id", `${id_counter}`);
-    div.append(`${song}, ${album}, ${band}`);
-    library.append(div);
-}
+    remove.textContent = "Remove";
+    remove.addEventListener("click", () => {
+        let get_music = div.getAttribute("music");
+        let get_id = document.getElementById(`${get_music}`);
+        get_id.remove()
+    });
 
-function remove_Music(id) {
-    const music = document.getElementById(`${id}`);
-    music.remove();
-    myLibrary[id] = Music.prototype;
+    div.setAttribute("music", `${myLibrary.length - 1}`);
+    div.id = `${myLibrary.length - 1}`;
+    library.append(div);
+    div.append(`${song}, ${album}, ${band}`, remove);
 }
 
 function receiveInput() {
     const enter = document.querySelector(".enter");
-    const remove = document.querySelector(".remove");
-
     const song = document.querySelector(".song");
     const album = document.querySelector(".album");
     const band = document.querySelector(".band");
-    const id = document.querySelector(".id");
 
     enter.addEventListener("click", () => addMusicToLibrary(song.value, album.value, band.value));
-    remove.addEventListener("click", () => remove_Music(id.value));
 }
 
 receiveInput();

@@ -50,6 +50,8 @@ body {
 }
 
 .library > div {
+    display: grid;
+    grid-template-rows: auto;
     background-color: white;
     padding: 8px;
     border-radius: 16px;
