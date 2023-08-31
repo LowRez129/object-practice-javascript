@@ -30,17 +30,10 @@ function remove_Music(id) {
 
 function receiveInput() {
     const enter = document.querySelector(".enter");
+    const remove = document.querySelector(".remove");
 
     enter.addEventListener("click", () => addMusicToLibrary("Test", "Ting", "123"));
+    remove.addEventListener("click", () => remove_Music(0));
 }
 
 receiveInput();
-addMusicToLibrary("Test", "Ting", "123");
-addMusicToLibrary("Aegis", "Noctourniquet", "Track 2");
-addMusicToLibrary("Eunuch Provocateur", "Tremulant", "Track 3");
-remove_Music(0)
-addMusicToLibrary("Test", "Ting", "123");
-addMusicToLibrary("Roullete Dares", "De-loused in the Comatorium", "Track 2");
-addMusicToLibrary("Tourmaline", "Que Dios Te Maldiga Mi Corazon", "Track 11");
-
-console.log(myLibrary);
