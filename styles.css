@@ -42,8 +42,7 @@ body {
 
 .library {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
     padding: 8px;
     gap: 8px;
     background-color: lightblue;
