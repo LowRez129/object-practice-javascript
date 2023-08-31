@@ -11,6 +11,7 @@ function Music(song, album = "unknown", band, id) {
 function addMusicToLibrary(song, album, band) {
     const library = document.querySelector(".library");
     const div = document.createElement("div");
+    id_counter += 1;
 
     let music = new Music(song, album, band, id_counter);
     myLibrary.push(music);
@@ -18,8 +19,6 @@ function addMusicToLibrary(song, album, band) {
     div.setAttribute("id", `${id_counter}`);
     div.append(`${song}, ${album}, ${band}`);
     library.append(div);
-
-    id_counter += 1;
 }
 
 function remove_Music(id) {
@@ -35,11 +34,10 @@ function receiveInput() {
     const song = document.querySelector(".song");
     const album = document.querySelector(".album");
     const band = document.querySelector(".band");
+    const id = document.querySelector(".id");
 
-    enter.addEventListener("click", () => {
-        addMusicToLibrary(song.value, album.value, band.value);
-    });
-    remove.addEventListener("click", () => remove_Music(0));
+    enter.addEventListener("click", () => addMusicToLibrary(song.value, album.value, band.value));
+    remove.addEventListener("click", () => remove_Music(id.value));
 }
 
 receiveInput();

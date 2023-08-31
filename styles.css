@@ -16,13 +16,13 @@ body {
 
 #content {
     display: grid;
-    grid-template-rows: 80% 20%;
+    grid-template-columns: 80% 20%;
     background-color: aqua;
 }
 
 .input-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
     gap: 8px;
     padding: 8px;
     align-items: center;
