@@ -50,9 +50,17 @@ body {
 
 .library > div {
     display: grid;
-    grid-template-rows: auto;
+    grid-template-rows: 5fr 1fr 1fr;
     background-color: white;
     padding: 8px;
     border-radius: 16px;
+    gap: 8px;
     text-align: center;
+}
+
+.library > div > .music-container {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    align-items: center;
+    background-color: cadetblue;
 }
