@@ -22,7 +22,7 @@ body {
 
 .input-container {
     display: grid;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
     gap: 8px;
     padding: 8px;
     align-items: center;
@@ -43,6 +43,7 @@ body {
 .library {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
     padding: 8px;
     gap: 8px;
     background-color: lightblue;
